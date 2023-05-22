@@ -1,0 +1,157 @@
+CHIP Q1signed{
+    IN x[16],y[16],AS;
+    OUT z[16],OF;
+
+    PARTS:
+ //change depending on addition or substraction 
+    Xor(a=y[0],b=AS,out=t0);
+    Xor(a=y[1],b=AS,out=t1);
+    Xor(a=y[2],b=AS,out=t2);
+    Xor(a=y[3],b=AS,out=t3);
+    Xor(a=y[4],b=AS,out=t4);
+    Xor(a=y[5],b=AS,out=t5);
+    Xor(a=y[6],b=AS,out=t6);
+    Xor(a=y[7],b=AS,out=t7);
+    Xor(a=y[8],b=AS,out=t8);
+    Xor(a=y[9],b=AS,out=t9);
+    Xor(a=y[10],b=AS,out=t10);
+    Xor(a=y[11],b=AS,out=t11);
+    Xor(a=y[12],b=AS,out=t12);
+    Xor(a=y[13],b=AS,out=t13);
+    Xor(a=y[14],b=AS,out=t14);
+    Xor(a=y[15],b=AS,out=t15);
+
+//c terms
+    And(a=x[0],b=t0,out=i0);
+    And(a=x[0],b=AS,out=j0);
+    And(a=t0,b=AS,out=k0);
+    Or(a=i0,b=j0,out=l0);
+    Or(a=l0,b=k0,out=c1);
+
+    And(a=x[1],b=t1,out=i1);
+    And(a=x[1],b=c1,out=j1);
+    And(a=t1,b=c1,out=k1);
+    Or(a=i1,b=j1,out=l1);
+    Or(a=l1,b=k1,out=c2);
+
+    And(a=x[2],b=t2,out=i2);
+    And(a=x[2],b=c2,out=j2);
+    And(a=t2,b=c2,out=k2);
+    Or(a=i2,b=j2,out=l2);
+    Or(a=l2,b=k2,out=c3);
+
+    And(a=x[3],b=t3,out=i3);
+    And(a=x[3],b=c3,out=j3);
+    And(a=t3,b=c3,out=k3);
+    Or(a=i3,b=j3,out=l3);
+    Or(a=l3,b=k3,out=c4);
+
+    And(a=x[4],b=t4,out=i4);
+    And(a=x[4],b=c4,out=j4);
+    And(a=t4,b=c4,out=k4);
+    Or(a=i4,b=j4,out=l4);
+    Or(a=l4,b=k4,out=c5);
+
+    And(a=x[5],b=t5,out=i5);
+    And(a=x[5],b=c5,out=j5);
+    And(a=t5,b=c5,out=k5);
+    Or(a=i5,b=j5,out=l5);
+    Or(a=l5,b=k5,out=c6);
+    
+    And(a=x[6],b=t6,out=i6);
+    And(a=x[6],b=c6,out=j6);
+    And(a=t6,b=c6,out=k6);
+    Or(a=i6,b=j6,out=l6);
+    Or(a=l6,b=k6,out=c7);
+    
+    And(a=x[7],b=t7,out=i7);
+    And(a=x[7],b=c7,out=j7);
+    And(a=t7,b=c7,out=k7);
+    Or(a=i7,b=j7,out=l7);
+    Or(a=l7,b=k7,out=c8);
+
+    And(a=x[8],b=t8,out=i8);
+    And(a=x[8],b=c8,out=j8);
+    And(a=t8,b=c8,out=k8);
+    Or(a=i8,b=j8,out=l8);
+    Or(a=l8,b=k8,out=c9);
+
+    And(a=x[9],b=t9,out=i9);
+    And(a=x[9],b=c9,out=j9);
+    And(a=t9,b=c9,out=k9);
+    Or(a=i9,b=j9,out=l9);
+    Or(a=l9,b=k9,out=c10);
+
+    And(a=x[10],b=t10,out=i10);
+    And(a=x[10],b=c10,out=j10);
+    And(a=t10,b=c10,out=k10);
+    Or(a=i10,b=j10,out=l10);
+    Or(a=l10,b=k10,out=c11);
+
+    And(a=x[11],b=t11,out=i11);
+    And(a=x[11],b=c11,out=j11);
+    And(a=t11,b=c11,out=k11);
+    Or(a=i11,b=j11,out=l11);
+    Or(a=l11,b=k11,out=c12);
+
+    And(a=x[12],b=t12,out=i12);
+    And(a=x[12],b=c12,out=j12);
+    And(a=t12,b=c12,out=k12);
+    Or(a=i12,b=j12,out=l12);
+    Or(a=l12,b=k12,out=c13);
+
+    And(a=x[13],b=t13,out=i13);
+    And(a=x[13],b=c13,out=j13);
+    And(a=t13,b=c13,out=k13);
+    Or(a=i13,b=j13,out=l13);
+    Or(a=l13,b=k13,out=c14);
+
+    And(a=x[14],b=t14,out=i14);
+    And(a=x[14],b=c14,out=j14);
+    And(a=t14,b=c14,out=k14);
+    Or(a=i14,b=j14,out=l14);
+    Or(a=l14,b=k14,out=c15);
+
+    And(a=x[15],b=t15,out=i15);
+    And(a=x[15],b=c15,out=j15);
+    And(a=t15,b=c15,out=k15);
+    Or(a=i15,b=j15,out=l15);
+    Or(a=l15,b=k15,out=c16);
+
+//z terms
+    Xor(a=x[0],b=t0,out=s0);
+    Xor(a=s0,b=AS,out=z[0]);
+    Xor(a=x[1],b=t1,out=s1);
+    Xor(a=s1,b=c1,out=z[1]);
+    Xor(a=x[2],b=t2,out=s2);
+    Xor(a=s2,b=c2,out=z[2]);
+    Xor(a=x[3],b=t3,out=s3);
+    Xor(a=s3,b=c3,out=z[3]);
+    Xor(a=x[4],b=t4,out=s4);
+    Xor(a=s4,b=c4,out=z[4]);
+    Xor(a=x[5],b=t5,out=s5);
+    Xor(a=s5,b=c5,out=z[5]);
+    Xor(a=x[6],b=t6,out=s6);
+    Xor(a=s6,b=c6,out=z[6]);
+    Xor(a=x[7],b=t7,out=s7);
+    Xor(a=s7,b=c7,out=z[7]);
+    Xor(a=x[8],b=t8,out=s8);
+    Xor(a=s8,b=c8,out=z[8]);
+    Xor(a=x[9],b=t9,out=s9);
+    Xor(a=s9,b=c9,out=z[9]);
+    Xor(a=x[10],b=t10,out=s10);
+    Xor(a=s10,b=c10,out=z[10]);
+    Xor(a=x[11],b=t11,out=s11);
+    Xor(a=s11,b=c11,out=z[11]);
+    Xor(a=x[12],b=t12,out=s12);
+    Xor(a=s12,b=c12,out=z[12]);
+    Xor(a=x[13],b=t13,out=s13);
+    Xor(a=s13,b=c13,out=z[13]);
+    Xor(a=x[14],b=t14,out=s14);
+    Xor(a=s14,b=c14,out=z[14]);
+    Xor(a=x[15],b=t15,out=s15);
+    Xor(a=s15,b=c15,out=z[15]);  
+
+//overflow  
+    Xor(a=c15,b=c16,out=OF);
+}

@@ -1,0 +1,13 @@
+CHIP FA
+{
+        IN x,y,z;
+	OUT s, c;
+        PARTS:
+//s = x(+)y(+)z
+        Xor(a = x, b = y, out = xorxy);
+        Xor(a = xorxy, b = z, out = s);
+//c = (x(+)y).z + x.y 
+        And(a = xorxy, b = z, out = t1);//term 1 for c
+        And(a = x, b = y, out = t2); //term 2 for c
+        Or(a = t1, b = t2, out = c);
+}

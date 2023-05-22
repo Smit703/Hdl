@@ -1,0 +1,12 @@
+CHIP Q2{
+    IN x[4];
+    OUT y[2];
+
+    PARTS:
+    // Put your code here:
+    Not(in = x[3], out = notx0);
+    Not(in = x[2], out = notx1);
+    Not(in = x[1], out = notx2);
+    And(a=notx0, b = notx1, out = y[1]);
+    And(a=notx0, b = notx2, out = y[0]);
+}

@@ -1,0 +1,39 @@
+CHIP twotoonemux8bit{
+    IN x0[8],x1[8],s1;        
+    OUT y[8];
+
+    PARTS:
+    Not(in=s1, out=nots1);      
+
+    And(a=s1, b=x1[0], out=t10);
+    And(a=nots1, b=x0[0], out=t20);
+    Or(a=t10, b=t20, out=y[0]);
+
+    And(a=s1, b=x1[1], out=t11);
+    And(a=nots1, b=x0[1], out=t21);
+    Or(a=t11, b=t21, out=y[1]);
+
+    And(a=s1, b=x1[2], out=t12);
+    And(a=nots1, b=x0[2], out=t22);
+    Or(a=t12, b=t22, out=y[2]);
+
+    And(a=s1, b=x1[3], out=t13);
+    And(a=nots1, b=x0[3], out=t23);
+    Or(a=t13, b=t23, out=y[3]);
+
+    And(a=s1, b=x1[4], out=t14);
+    And(a=nots1, b=x0[4], out=t24);
+    Or(a=t14, b=t24, out=y[4]);
+
+    And(a=s1, b=x1[5], out=t15);
+    And(a=nots1, b=x0[5], out=t25);
+    Or(a=t15, b=t25, out=y[5]);
+
+    And(a=s1, b=x1[6], out=t16);
+    And(a=nots1, b=x0[6], out=t26);
+    Or(a=t16, b=t26, out=y[6]);
+
+    And(a=s1, b=x1[7], out=t17);
+    And(a=nots1, b=x0[7], out=t27);
+    Or(a=t17, b=t27, out=y[7]);
+}

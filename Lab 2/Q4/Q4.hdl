@@ -1,0 +1,56 @@
+CHIP Q4
+{
+	IN x0,x1,x2,x3,x4,x5,x6,x7,y0,y1,y2,y3,y4,y5,y6,y7;
+	OUT z;
+	
+	PARTS:
+	Not(in=x0, out = notx0);
+	Not(in=x1, out = notx1);
+	Not(in=x2, out = notx2);
+	Not(in=x3, out = notx3);
+	Not(in=x4, out = notx4);
+	Not(in=x5, out = notx5);
+	Not(in=x6, out = notx6);
+	Not(in=x7, out = notx7);
+	Not(in=y0, out = noty0);
+	Not(in=y1, out = noty1);
+	Not(in=y2, out = noty2);
+	Not(in=y3, out = noty3);
+	Not(in=y4, out = noty4);
+	Not(in=y5, out = noty5);
+	Not(in=y6, out = noty6);
+	Not(in=y7, out = noty7);
+	
+	Or(a=notx0, b=y0, out=m1);
+	Or(a=notx1, b=y1, out=m2);
+	Or(a=notx2, b=y2, out=m3);
+	Or(a=notx3, b=y3, out=m4);
+	Or(a=notx4, b=y4, out=m5);
+	Or(a=notx5, b=y5, out=m6);
+	Or(a=notx6, b=y6, out=m7);
+	Or(a=notx7, b=y7, out=m8);
+	Or(a=noty0, b=x0, out=n1);
+	Or(a=noty1, b=x1, out=n2);
+	Or(a=noty2, b=x2, out=n3);
+	Or(a=noty3, b=x3, out=n4);
+	Or(a=noty4, b=x4, out=n5);
+	Or(a=noty5, b=x5, out=n6);
+	Or(a=noty6, b=x6, out=n7);
+	Or(a=noty7, b=x7, out=n8);
+	
+	And(a=m1, b=n1,out=t1);
+	And(a=m2, b=n2,out=t2);
+	And(a=m3, b=n3,out=t3);
+	And(a=m4, b=n4,out=t4);
+	And(a=m5, b=n5,out=t5);
+	And(a=m6, b=n6,out=t6);
+	And(a=m7, b=n7,out=t7);
+	And(a=m8, b=n8,out=t8);
+	And(a=t1, b=t2,out=r1);
+	And(a=t3, b=t4,out=r2);
+	And(a=t5, b=t6,out=r3);
+	And(a=t7, b=t8,out=r4);
+	And(a=r1, b=r2,out=e1);
+	And(a=r3, b=r4,out=e2);
+	And(a=e1, b=e2,out=z);
+}

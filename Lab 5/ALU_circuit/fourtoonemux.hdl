@@ -1,0 +1,86 @@
+CHIP fourtoonemux{
+    IN x0[8],x1[8],x2[8],x3[8],s1,s0;
+    OUT y[8];
+
+    PARTS:
+    Not(in=s1, out=nots1);
+    Not(in=s0, out=nots0);
+
+    And(a=nots1, b=nots0, out=f1);
+    And(a=nots1, b=s0, out=f2);
+    And(a=s1, b=nots0, out=f3);
+    And(a=s1, b=s0, out=f4);        
+
+    And(a=f1, b=x0[0], out=t10);
+    And(a=f2, b=x1[0], out=t20);
+    And(a=f3, b=x2[0], out=t30);
+    And(a=f4, b=x3[0], out=t40);
+
+    Or(a=t10, b=t20, out=a10);
+    Or(a=t30, b=t40, out=a20);
+    Or(a=a10, b=a20, out=y[0]);
+
+    And(a=f1, b=x0[1], out=t11);
+    And(a=f2, b=x1[1], out=t21);
+    And(a=f3, b=x2[1], out=t31);
+    And(a=f4, b=x3[1], out=t41);
+
+    Or(a=t11, b=t21, out=a11);
+    Or(a=t31, b=t41, out=a21);
+    Or(a=a11, b=a21, out=y[1]);
+
+    And(a=f1, b=x0[2], out=t12);
+    And(a=f2, b=x1[2], out=t22);
+    And(a=f3, b=x2[2], out=t32);
+    And(a=f4, b=x3[2], out=t42);
+
+    Or(a=t12, b=t22, out=a12);
+    Or(a=t32, b=t42, out=a22);
+    Or(a=a12, b=a22, out=y[2]);
+
+    And(a=f1, b=x0[3], out=t13);
+    And(a=f2, b=x1[3], out=t23);
+    And(a=f3, b=x2[3], out=t33);
+    And(a=f4, b=x3[3], out=t43);
+
+    Or(a=t13, b=t23, out=a13);
+    Or(a=t33, b=t43, out=a23);
+    Or(a=a13, b=a23, out=y[3]);
+
+    And(a=f1, b=x0[4], out=t14);
+    And(a=f2, b=x1[4], out=t24);
+    And(a=f3, b=x2[4], out=t34);
+    And(a=f4, b=x3[4], out=t44);
+
+    Or(a=t14, b=t24, out=a14);
+    Or(a=t34, b=t44, out=a24);
+    Or(a=a14, b=a24, out=y[4]);
+
+    And(a=f1, b=x0[5], out=t15);
+    And(a=f2, b=x1[5], out=t25);
+    And(a=f3, b=x2[5], out=t35);
+    And(a=f4, b=x3[5], out=t45);
+
+    Or(a=t15, b=t25, out=a15);
+    Or(a=t35, b=t45, out=a25);
+    Or(a=a15, b=a25, out=y[5]);
+
+    And(a=f1, b=x0[6], out=t16);
+    And(a=f2, b=x1[6], out=t26);
+    And(a=f3, b=x2[6], out=t36);
+    And(a=f4, b=x3[6], out=t46);
+
+    Or(a=t16, b=t26, out=a16);
+    Or(a=t36, b=t46, out=a26);
+    Or(a=a16, b=a26, out=y[6]);
+
+    And(a=f1, b=x0[7], out=t17);
+    And(a=f2, b=x1[7], out=t27);
+    And(a=f3, b=x2[7], out=t37);
+    And(a=f4, b=x3[7], out=t47);
+
+    Or(a=t17, b=t27, out=a17);
+    Or(a=t37, b=t47, out=a27);
+    Or(a=a17, b=a27, out=y[7]);
+
+}

@@ -1,0 +1,11 @@
+CHIP twotoonemux1bit{
+    IN x0,x1,s1;        
+    OUT y;
+
+    PARTS:
+    Not(in=s1, out=nots1);      
+
+    And(a=s1, b=x1, out=t10);
+    And(a=nots1, b=x0, out=t20);
+    Or(a=t10, b=t20, out=y);
+}

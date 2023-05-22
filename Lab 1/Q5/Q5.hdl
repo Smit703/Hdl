@@ -1,0 +1,26 @@
+CHIP Q5{
+    IN x[3];
+    OUT y[8];
+
+    PARTS:
+    // Put your code here:
+    Not(in = x[0], out = notx0);
+    Not(in = x[1], out = notx1);
+    Not(in = x[2], out = notx2);
+    And(a=notx2, b = notx1, out = temp);
+    And(a=temp, b = notx0, out = y[7]);
+    And(a=notx2, b = notx1, out = temp1);
+    And(a=temp1, b = x[0], out = y[6]);
+    And(a=notx2, b = x[1], out = temp2);
+    And(a=temp2, b = notx0, out = y[5]);
+    And(a=notx2, b = x[1], out = temp3);
+    And(a=temp3, b = x[0], out = y[4]);
+    And(a=x[2], b = notx1, out = temp4);
+    And(a=temp4, b = notx0, out = y[3]);
+    And(a=x[2], b = notx1, out = temp5);
+    And(a=temp5, b = x[0], out = y[2]);
+    And(a=x[2], b = x[1], out = temp6);
+    And(a=temp6, b = notx0, out = y[1]);
+    And(a=x[2], b = x[1], out = temp7);
+    And(a=temp7, b = x[0], out = y[0]);
+}

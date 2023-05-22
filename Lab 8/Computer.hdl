@@ -1,0 +1,17 @@
+CHIP Computer {
+
+    IN reset;
+
+    PARTS:
+
+ //ROM32k is an internal chip acting as a substitute for ROM.
+    ROM32K(address=pc, out=instruction);    
+
+ //call main (hackCPU) to perform required steps 
+    HackCPU(inM=input, instruction=instruction, reset=reset, outM=output, writeM=load, addressM=address, pc=pc);
+
+ //getting value in memory
+    Memory(in=output, load=load, address=address, out=input);   
+}
+
+

@@ -1,0 +1,19 @@
+CHIP Main{
+    IN x[16], y[16];
+    OUT z[16],OF;
+
+    PARTS:
+//Sign bit
+    Xor(a=x[15],b=y[15],out=z[15]);
+
+//Mantissa bits
+    Multiplier(x[7]=true,x[6]=x[6],x[5]=x[5],x[4]=x[4],x[3]=x[3],x[2]=x[2],x[1]=x[1],x[0]=x[0],y[7]=true,y[6]=y[6],y[5]=y[5],y[4]=y[4],y[3]=y[3],y[2]=y[2],y[1]=y[1],y[0]=y[0],zero=false,P[15]=p15,P[14]=p14,P[13]=p13,P[12]=p12,P[11]=p11,P[10]=p10,P[9]=p9,P[8]=p8,P[7]=p7,P[6]=p6,P[5]=p5,P[4]=p4,P[3]=p3,P[2]=p2,P[1]=p1,P[0]=p0);
+    twotoonemux7bit(x0[6]=p13,x0[5]=p12,x0[4]=p11,x0[3]=p10,x0[2]=p9,x0[1]=p8,x0[0]=p7,x1[6]=p14,x1[5]=p13,x1[4]=p12,x1[3]=p11,x1[2]=p10,x1[1]=p9,x1[0]=p8,s1=p15,y[6]=z[6],y[5]=z[5],y[4]=z[4],y[3]=z[3],y[2]=z[2],y[1]=z[1],y[0]=z[0]);
+
+//Exponent bits
+    bas(x[7]=x[14],x[6]=x[13],x[5]=x[12],x[4]=x[11],x[3]=x[10],x[2]=x[9],x[1]=x[8],x[0]=x[7],y[7]=y[14],y[6]=y[13],y[5]=y[12],y[4]=y[11],y[3]=y[10],y[2]=y[9],y[1]=y[8],y[0]=y[7],AS=false,Z[7]=t14,Z[6]=t13,Z[5]=t12,Z[4]=t11,Z[3]=t10,Z[2]=t9,Z[1]=t8,Z[0]=t7,OFUAS=t15);
+    rbias(x[8]=t15,x[7]=t14,x[6]=t13,x[5]=t12,x[4]=t11,x[3]=t10,x[2]=t9,x[1]=t8,x[0]=t7,y[8]=false,y[7]=false,y[6]=true,y[5]=true,y[4]=true,y[3]=true,y[2]=true,y[1]=true,y[0]=true,AS=true,Z[7]=t014,Z[6]=t013,Z[5]=t012,Z[4]=t011,Z[3]=t010,Z[2]=t09,Z[1]=t08,Z[0]=t07,AOF=O0F);    
+    rbias(x[8]=t15,x[7]=t14,x[6]=t13,x[5]=t12,x[4]=t11,x[3]=t10,x[2]=t9,x[1]=t8,x[0]=t7,y[8]=false,y[7]=false,y[6]=true,y[5]=true,y[4]=true,y[3]=true,y[2]=true,y[1]=true,y[0]=false,AS=true,Z[7]=t114,Z[6]=t113,Z[5]=t112,Z[4]=t111,Z[3]=t110,Z[2]=t19,Z[1]=t18,Z[0]=t17,AOF=O1F);
+    twotoonemux8bit(x0[7]=t014,x0[6]=t013,x0[5]=t012,x0[4]=t011,x0[3]=t010,x0[2]=t09,x0[1]=t08,x0[0]=t07,x1[7]=t114,x1[6]=t113,x1[5]=t112,x1[4]=t111,x1[3]=t110,x1[2]=t19,x1[1]=t18,x1[0]=t17,s1=p15,y[7]=z[14],y[6]=z[13],y[5]=z[12],y[4]=z[11],y[3]=z[10],y[2]=z[9],y[1]=z[8],y[0]=z[7]);
+    twotoonemux1bit(x0=O0F,x1=O1F,s1=p15,y=OF);   
+}

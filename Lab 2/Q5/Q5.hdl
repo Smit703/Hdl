@@ -1,0 +1,22 @@
+CHIP Q5{
+    IN x0,x1,x2,x3,x4,x5,x6,x7,y0,y1,y2,y3,y4,y5,y6,y7;
+    OUT Z;
+
+    PARTS:
+    // Put your code here:
+    Xor(a = x0, b = x1, out = i1);
+    Xor(a = x2, b = x3, out = i2);
+    Xor(a = x4, b = x5, out = i3);
+    Xor(a = x6, b = x7, out = i4);
+    Xor(a = i1, b = i2, out = f1);
+    Xor(a = i3, b = i4, out = f2);
+    Xor(a = f1, b = f2, out = PG);
+    Xor(a = y0, b = y1, out = j1);
+    Xor(a = y2, b = y3, out = j2);
+    Xor(a = y4, b = y5, out = j3);
+    Xor(a = y6, b = y7, out = j4);
+    Xor(a = j1, b = j2, out = k1);
+    Xor(a = j3, b = j4, out = k2);
+    Xor(a = k1, b = k2, out = pf);
+    Xor(a= pf, b = PG, out = Z);
+}

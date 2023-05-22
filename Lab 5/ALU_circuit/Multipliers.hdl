@@ -1,0 +1,162 @@
+CHIP Multipliers{
+    IN x[8],y[8],zero;
+    OUT P[8],OF;
+
+    PARTS:
+	Not(in=zero,out=one);
+//Partial product terms
+        And(a=x[0],b=y[0], out=PP00);
+	And(a=x[1],b=y[0], out=PP01);
+	And(a=x[2],b=y[0], out=PP02);
+	And(a=x[3],b=y[0], out=PP03);
+	And(a=x[4],b=y[0], out=PP04);
+	And(a=x[5],b=y[0], out=PP05);
+	And(a=x[6],b=y[0], out=PP06);
+	And(a=x[7],b=y[0], out=PP07);
+
+	And(a=x[7],b=y[0], out=PP08);
+	And(a=x[7],b=y[0], out=PP09);
+	And(a=x[7],b=y[0], out=PP010);
+	And(a=x[7],b=y[0], out=PP011);
+	And(a=x[7],b=y[0], out=PP012);	
+	And(a=x[7],b=y[0], out=PP013);
+	And(a=x[7],b=y[0], out=PP014);
+	And(a=x[7],b=y[0], out=PP015);	
+	
+	
+	
+	And(a=x[0],b=y[1], out=PP11);
+	And(a=x[1],b=y[1], out=PP12);
+	And(a=x[2],b=y[1], out=PP13);
+	And(a=x[3],b=y[1], out=PP14);
+	And(a=x[4],b=y[1], out=PP15);
+	And(a=x[5],b=y[1], out=PP16);
+	And(a=x[6],b=y[1], out=PP17);
+	And(a=x[7],b=y[1], out=PP18);
+
+	And(a=x[7],b=y[1], out=PP19);
+	And(a=x[7],b=y[1], out=PP110);
+	And(a=x[7],b=y[1], out=PP111);
+	And(a=x[7],b=y[1], out=PP112);
+	And(a=x[7],b=y[1], out=PP113);
+	And(a=x[7],b=y[1], out=PP114);
+	And(a=x[7],b=y[1], out=PP115);
+
+
+	And(a=x[0],b=y[2], out=PP22);
+	And(a=x[1],b=y[2], out=PP23);
+	And(a=x[2],b=y[2], out=PP24);
+	And(a=x[3],b=y[2], out=PP25);
+	And(a=x[4],b=y[2], out=PP26);
+	And(a=x[5],b=y[2], out=PP27);
+	And(a=x[6],b=y[2], out=PP28);
+	And(a=x[7],b=y[2], out=PP29);
+
+	And(a=x[7],b=y[2], out=PP210);
+	And(a=x[7],b=y[2], out=PP211);
+	And(a=x[7],b=y[2], out=PP212);
+	And(a=x[7],b=y[2], out=PP213);
+	And(a=x[7],b=y[2], out=PP214);
+	And(a=x[7],b=y[2], out=PP215);
+
+			
+	And(a=x[0],b=y[3], out=PP33);
+	And(a=x[1],b=y[3], out=PP34);
+	And(a=x[2],b=y[3], out=PP35);
+	And(a=x[3],b=y[3], out=PP36);
+	And(a=x[4],b=y[3], out=PP37);
+	And(a=x[5],b=y[3], out=PP38);
+	And(a=x[6],b=y[3], out=PP39);
+	And(a=x[7],b=y[3], out=PP310);
+
+	And(a=x[7],b=y[3], out=PP311);
+	And(a=x[7],b=y[3], out=PP312);
+	And(a=x[7],b=y[3], out=PP313);
+	And(a=x[7],b=y[3], out=PP314);
+	And(a=x[7],b=y[3], out=PP315);
+	
+
+	And(a=x[0],b=y[4], out=PP44);
+	And(a=x[1],b=y[4], out=PP45);
+	And(a=x[2],b=y[4], out=PP46);
+	And(a=x[3],b=y[4], out=PP47);
+	And(a=x[4],b=y[4], out=PP48);
+	And(a=x[5],b=y[4], out=PP49);
+	And(a=x[6],b=y[4], out=PP410);
+	And(a=x[7],b=y[4], out=PP411);
+
+	And(a=x[7],b=y[4], out=PP412);
+	And(a=x[7],b=y[4], out=PP413);
+	And(a=x[7],b=y[4], out=PP414);
+	And(a=x[7],b=y[4], out=PP415);
+	
+	And(a=x[0],b=y[5], out=PP55);
+	And(a=x[1],b=y[5], out=PP56);
+	And(a=x[2],b=y[5], out=PP57);
+	And(a=x[3],b=y[5], out=PP58);
+	And(a=x[4],b=y[5], out=PP59);
+	And(a=x[5],b=y[5], out=PP510);
+	And(a=x[6],b=y[5], out=PP511);
+	And(a=x[7],b=y[5], out=PP512);
+
+	And(a=x[7],b=y[5], out=PP513);
+	And(a=x[7],b=y[5], out=PP514);
+	And(a=x[7],b=y[5], out=PP515);
+
+	And(a=x[0],b=y[6], out=PP66);
+	And(a=x[1],b=y[6], out=PP67);
+	And(a=x[2],b=y[6], out=PP68);
+	And(a=x[3],b=y[6], out=PP69);
+	And(a=x[4],b=y[6], out=PP610);
+	And(a=x[5],b=y[6], out=PP611);
+	And(a=x[6],b=y[6], out=PP612);
+	And(a=x[7],b=y[6], out=PP613);
+
+	And(a=x[7],b=y[6], out=PP614);
+	And(a=x[7],b=y[6], out=PP615);
+	
+	And(a=x[0],b=y[7], out=PP077);
+	And(a=x[1],b=y[7], out=PP078);
+	And(a=x[2],b=y[7], out=PP079);
+	And(a=x[3],b=y[7], out=PP0710);
+	And(a=x[4],b=y[7], out=PP0711);
+	And(a=x[5],b=y[7], out=PP0712);
+	And(a=x[6],b=y[7], out=PP0713);
+	And(a=x[7],b=y[7], out=PP0714);
+	And(a=x[7],b=y[7], out=PP0715);
+
+
+//taking 1s compliment
+	Xor(a=PP077,b=y[7], out=P1P77);
+	Xor(a=PP078,b=y[7], out=P1P78);
+	Xor(a=PP079,b=y[7], out=P1P79);
+	Xor(a=PP0710,b=y[7], out=P1P710);
+	Xor(a=PP0711,b=y[7], out=P1P711);
+	Xor(a=PP0712,b=y[7], out=P1P712);
+	Xor(a=PP0713,b=y[7], out=P1P713);
+	Xor(a=PP0714,b=y[7], out=P1P714);
+	Xor(a=PP0715,b=y[7], out=P1P715);
+
+//taking 2s compliment
+	And(a=y[7],b=one,out=F);
+	HigherCLA(x[0]=zero,x[1]=zero,x[2]=zero,x[3]=zero,x[4]=zero,x[5]=zero,x[6]=zero,x[7]=P1P77,x[8]=P1P78,x[9]=P1P79,x[10]=P1P710,x[11]=P1P711,x[12]=P1P712,x[13]=P1P713,x[14]=P1P714,x[15]=P1P715, y[0]=zero,y[1]=zero,y[2]=zero,y[3]=zero,y[4]=zero,y[5]=zero,y[6]=zero,y[7]=F,y[8]=zero,y[9]=zero,y[10]=zero,y[11]=zero,y[12]=zero,y[13]=zero,y[14]=zero,y[15]=zero,AS=zero, Z[0]=PP70,Z[1]=PP71,Z[2]=PP72,Z[3]=PP73,Z[4]=PP74,Z[5]=PP75,Z[6]=PP76,Z[7]=PP77,Z[8]=PP78,Z[9]=PP79,Z[10]=PP710,Z[11]=PP711,Z[12]=PP712,Z[13]=PP713,Z[14]=PP714,Z[15]=PP715); 
+
+	
+
+//level 0
+        reducer(x[0]=PP00,x[1]=PP01,x[2]=PP02,x[3]=PP03,x[4]=PP04,x[5]=PP05,x[6]=PP06,x[7]=PP07,x[8]=PP08,x[9]=PP09,x[10]=PP010,x[11]=PP011,x[12]=PP012,x[13]=PP013,x[14]=PP014,x[15]=PP015,y[1]=PP11,y[2]=PP12,y[3]=PP13,y[4]=PP14,y[5]=PP15,y[6]=PP16,y[7]=PP17,y[8]=PP18,y[9]=PP19,y[10]=PP110,y[11]=PP111,y[12]=PP112,y[13]=PP113,y[14]=PP114,y[15]=PP115, z[2]=PP22,z[3]=PP23,z[4]=PP24,z[5]=PP25,z[6]=PP26,z[7]=PP27,z[8]=PP28,z[9]=PP29,z[10]=PP210,z[11]=PP211,z[12]=PP212,z[13]=PP213,z[14]=PP214,z[15]=PP215, s[0]=s10,s[1]=s11,s[2]=s12,s[3]=s13,s[4]=s14,s[5]=s15,s[6]=s16,s[7]=s17,s[8]=s18,s[9]=s19,s[10]=s110,s[11]=s111,s[12]=s112,s[13]=s113,s[14]=s114,s[15]=s115,c[0]=c10,c[1]=c11,c[2]=c12,c[3]=c13,c[4]=c14,c[5]=c15,c[6]=c16,c[7]=c17,c[8]=c18,c[9]=c19,c[10]=c110,c[11]=c111,c[12]=c112,c[13]=c113,c[14]=c114,c[15]=c115);
+        reducer(x[3]=PP33,x[4]=PP34,x[5]=PP35,x[6]=PP36,x[7]=PP37,x[8]=PP38,x[9]=PP39,x[10]=PP310,x[11]=PP311,x[12]=PP312,x[13]=PP313,x[14]=PP314,x[15]=PP315, y[4]=PP44,y[5]=PP45,y[6]=PP46,y[7]=PP47,y[8]=PP48,y[9]=PP49,y[10]=PP410,y[11]=PP411,y[12]=PP412,y[13]=PP413,y[14]=PP414,y[15]=PP415, z[5]=PP55,z[6]=PP56,z[7]=PP57,z[8]=PP58,z[9]=PP59,z[10]=PP510,z[11]=PP511,z[12]=PP512,z[13]=PP513,z[14]=PP514,z[15]=PP515, s[3]=s23,s[4]=s24,s[5]=s25,s[6]=s26,s[7]=s27,s[8]=s28,s[9]=s29,s[10]=s210,s[11]=s211,s[12]=s212,s[13]=s213,s[14]=s214,s[15]=s215, c[3]=c23,c[4]=c24,c[5]=c25,c[6]=c26,c[7]=c27,c[8]=c28,c[9]=c29,c[10]=c210,c[11]=c211,c[12]=c212,c[13]=c213,c[14]=c214,c[15]=c215);
+//level 1
+        reducer(x[1]=c10,x[2]=c11,x[3]=c12,x[4]=c13,x[5]=c14,x[6]=c15,x[7]=c16,x[8]=c17,x[9]=c18,x[10]=c19,x[11]=c110,x[12]=c111,x[13]=c112,x[14]=c113,x[15]=c114,y[0]=s10,y[1]=s11,y[2]=s12,y[3]=s13,y[4]=s14,y[5]=s15,y[6]=s16,y[7]=s17,y[8]=s18,y[9]=s19,y[10]=s110,y[11]=s111,y[12]=s112,y[13]=s113,y[14]=s114,y[15]=s115, z[4]=c23,z[5]=c24,z[6]=c25,z[7]=c26,z[8]=c27,z[9]=c28,z[10]=c29,z[11]=c210,z[12]=c211,z[13]=c212,z[14]=c213,z[15]=c214, s[0]=s30,s[1]=s31,s[2]=s32,s[3]=s33,s[4]=s34,s[5]=s35,s[6]=s36,s[7]=s37,s[8]=s38,s[9]=s39,s[10]=s310,s[11]=s311,s[12]=s312,s[13]=s313,s[14]=s314,s[15]=s315, c[0]=c30,c[1]=c31,c[2]=c32,c[3]=c33,c[4]=c34,c[5]=c35,c[6]=c36,c[7]=c37,c[8]=c38,c[9]=c39,c[10]=c310,c[11]=c311,c[12]=c312,c[13]=c313,c[14]=c314,c[15]=c315);
+        reducer(x[3]=s23,x[4]=s24,x[5]=s25,x[6]=s26,x[7]=s27,x[8]=s28,x[9]=s29,x[10]=s210,x[11]=s211,x[12]=s212,x[13]=s213,x[14]=s214,x[15]=s215, y[6]=PP66,y[7]=PP67,y[8]=PP68,y[9]=PP69,y[10]=PP610,y[11]=PP611,y[12]=PP612,y[13]=PP613,y[14]=PP614,y[15]=PP615, z[7]=PP77,z[8]=PP78,z[9]=PP79,z[10]=PP710,z[11]=PP711,z[12]=PP712,z[13]=PP713,z[14]=PP714,z[15] = PP715,s[3]=s43,s[4]=s44,s[5]=s45,s[6]=s46,s[7]=s47,s[8]=s48,s[9]=s49,s[10]=s410,s[11]=s411,s[12]=s412,s[13]=s413,s[14]=s414 ,s[15] = s415, c[3]=c43,c[4]=c44,c[5]=c45,c[6]=c46,c[7]=c47,c[8]=c48,c[9]=c49,c[10]=c410,c[11]=c411,c[12]=c412,c[13]=c413,c[14]=c414,c[15]=c415);
+//level 2
+        reducer(x[1]=c30,x[2]=c31,x[3]=c32,x[4]=c33,x[5]=c34,x[6]=c35,x[7]=c36,x[8]=c37,x[9]=c38,x[10]=c39,x[11]=c310,x[12]=c311,x[13]=c312,x[14]=c313,x[15]=c314, y[0]=s30,y[1]=s31,y[2]=s32,y[3]=s33,y[4]=s34,y[5]=s35,y[6]=s36,y[7]=s37,y[8]=s38,y[9]=s39,y[10]=s310,y[11]=s311,y[12]=s312,y[13]=s313,y[14]=s314,y[15]=s315,z[3]=s43,z[4]=s44,z[5]=s45,z[6]=s46,z[7]=s47,z[8]=s48,z[9]=s49,z[10]=s410,z[11]=s411,z[12]=s412,z[13]=s413,z[14]=s414,z[15]=s415, s[0]=s50,s[1]=s51,s[2]=s52,s[3]=s53,s[4]=s54,s[5]=s55,s[6]=s56,s[7]=s57,s[8]=s58,s[9]=s59,s[10]=s510,s[11]=s511,s[12]=s512,s[13]=s513,s[14]=s514, s[15] = s515, c[0]=c50,c[1]=c51,c[2]=c52,c[3]=c53,c[4]=c54,c[5]=c55,c[6]=c56,c[7]=c57,c[8]=c58,c[9]=c59,c[10]=c510,c[11]=c511,c[12]=c512,c[13]=c513,c[14]=c514, c[15] = c515);
+//level 3
+        reducer(x[1]=c50,x[2]=c51,x[3]=c52,x[4]=c53,x[5]=c54,x[6]=c55,x[7]=c56,x[8]=c57,x[9]=c58,x[10]=c59,x[11]=c510,x[12]=c511,x[13]=c512,x[14]=c513,x[15]=c514, y[0]=s50,y[1]=s51,y[2]=s52,y[3]=s53,y[4]=s54,y[5]=s55,y[6]=s56,y[7]=s57,y[8]=s58,y[9]=s59,y[10]=s510,y[11]=s511,y[12]=s512,y[13]=s513,y[14]=s514, y[15] = s515, z[4]=c43,z[5]=c44,z[6]=c45,z[7]=c46,z[8]=c47,z[9]=c48,z[10]=c49,z[11]=c410,z[12]=c411,z[13]=c412,z[14]=c413,z[15]=c414, s[0]=s60,s[1]=s61,s[2]=s62,s[3]=s63,s[4]=s64,s[5]=s65,s[6]=s66,s[7]=s67,s[8]=s68,s[9]=s69,s[10]=s610,s[11]=s611,s[12]=s612,s[13]=s613,s[14]=s614,s[15]=s615, c[0]=c60,c[1]=c61,c[2]=c62,c[3]=c63,c[4]=c64,c[5]=c65,c[6]=c66,c[7]=c67,c[8]=c68,c[9]=c69,c[10]=c610,c[11]=c611,c[12]=c612,c[13]=c613,c[14]=c614,c[15]=c615);
+//level 4
+        HigherCLA(x[0]=s60,x[1]=s61,x[2]=s62,x[3]=s63,x[4]=s64,x[5]=s65,x[6]=s66,x[7]=s67,x[8]=s68,x[9]=s69,x[10]=s610,x[11]=s611,x[12]=s612,x[13]=s613,x[14]=s614,x[15]=s615, y[1]=c60,y[2]=c61,y[3]=c62,y[4]=c63,y[5]=c64,y[6]=c65,y[7]=c66,y[8]=c67,y[9]=c68,y[10]=c69,y[11]=c610,y[12]=c611,y[13]=c612,y[14]=c613,y[15]=c614,AS=zero, Z[0]=P[0],Z[1]=P[1],Z[2]=P[2],Z[3]=P[3],Z[4]=P[4],Z[5]=P[5],Z[6]=P[6],Z[7]=P[7],Z[8]=Z8,Z[9]=Z9,Z[10]=Z10,Z[11]=Z11,Z[12]=Z12,Z[13]=Z13,Z[14]=Z14,Z[15]=Z15); 
+
+//Overflow
+        Overflow2(x0=Z8,x1=Z9,x2=Z10,x3=Z11,x4=Z12,x5=Z13,x6=Z14,x7=Z15,a=x[7],b=y[7], z=OF);      
+    
+}

@@ -1,0 +1,24 @@
+CHIP reducer
+{
+        IN x[16],y[16],z[16];
+	OUT s[16], c[16];
+        PARTS:
+
+//We use FA with three inputs and give out two outputs for 16 bits
+        FA(x = x[0], y = y[0], z = z[0], s = s[0], c = c[0]);
+        FA(x = x[1], y = y[1], z = z[1], s = s[1], c = c[1]);
+        FA(x = x[2], y = y[2], z = z[2], s = s[2], c = c[2]);
+        FA(x = x[3], y = y[3], z = z[3], s = s[3], c = c[3]);
+        FA(x = x[4], y = y[4], z = z[4], s = s[4], c = c[4]);
+        FA(x = x[5], y = y[5], z = z[5], s = s[5], c = c[5]);
+        FA(x = x[6], y = y[6], z = z[6], s = s[6], c = c[6]);
+        FA(x = x[7], y = y[7], z = z[7], s = s[7], c = c[7]);
+        FA(x = x[8], y = y[8], z = z[8], s = s[8], c = c[8]);
+        FA(x = x[9], y = y[9], z = z[9], s = s[9], c = c[9]);
+        FA(x = x[10], y = y[10], z = z[10], s = s[10], c = c[10]);
+        FA(x = x[11], y = y[11], z = z[11], s = s[11], c = c[11]);
+        FA(x = x[12], y = y[12], z = z[12], s = s[12], c = c[12]);
+        FA(x = x[13], y = y[13], z = z[13], s = s[13], c = c[13]);
+        FA(x = x[14], y = y[14], z = z[14], s = s[14], c = c[14]);
+        FA(x = x[15], y = y[15], z = z[15], s = s[15], c = c[15]);
+}

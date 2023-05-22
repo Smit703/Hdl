@@ -1,0 +1,23 @@
+CHIP Q1ii{
+    IN w, x, y, z;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    Nand(a=w,b=w ,out = notw);
+    Nand(a=x,b=x, out = notx);
+    Nand(a=z,b=z, out = notz);
+    Nand(a=y, b = z, out = t1);
+    Nand(a=w, b = notz, out = t2);
+    Nand(a=notw, b = notx, out = p3);
+    Nand(a=p3, b = p3, out = notp3);
+    Nand(a=notp3, b = z, out = t3);
+    Nand(a=notw, b = x, out = p4);
+    Nand(a=p4, b = p4, out = notp4);
+    Nand(a=notp4, b = notz, out = t4);
+    Nand(a=t1, b = t2, out = f1);
+    Nand(a=t3, b = t4, out = f2);
+    Nand(a=f1, b = f1, out = notf1);
+    Nand(a=f2, b = f2, out = notf2);
+    Nand(a=notf1, b = notf2, out = out);
+}

@@ -1,0 +1,15 @@
+CHIP Overflow1
+{
+        IN x0,x1,x2,x3,x4,x5,x6,x7;
+	OUT z;
+
+//If any of the bits between x0 to x7 is 1 then there is overflow
+        PARTS:
+        Or(a=x0,b=x1, out=t1);
+        Or(a=x2,b=x3, out=t2);
+        Or(a=x4,b=x5, out=t3);
+        Or(a=x6,b=x7, out=t4);
+        Or(a=t1,b=t2, out=t5);
+        Or(a=t3,b=t4, out=t6);
+        Or(a=t5,b=t6, out=z);
+}

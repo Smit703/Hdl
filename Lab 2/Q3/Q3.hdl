@@ -1,0 +1,55 @@
+CHIP Q3
+{
+	IN s0,s1,s2,x0,x1;
+	OUT y00,y10,y20,y30,y40,y50,y60,y70,y01,y11,y21,y31,y41,y51,y61,y71;
+	
+	PARTS:
+	Not(in=s0, out=nots0);
+	Not(in=s1, out=nots1);
+	Not(in=s2, out=nots2);
+
+	And(a=nots0, b=nots1,out=m1);
+	And(a=s0, b=nots1,out=m2);
+	And(a=nots0, b=s1,out=m3);
+	And(a=s0, b=s1,out=m4);
+	And(a=nots0, b=nots1,out=m5);
+	And(a=s0, b=nots1,out=m6);	
+	And(a=nots0, b=s1,out=m7);
+	And(a=s0, b=s1,out=m8);
+
+	And(a=nots2, b=x0,out=l1);
+	And(a=nots2, b=x0,out=l2);
+	And(a=nots2, b=x0,out=l3);
+	And(a=nots2, b=x0,out=l4);
+	And(a=s2, b=x0,out=l5);
+	And(a=s2, b=x0,out=l6);
+	And(a=s2, b=x0,out=l7);
+	And(a=s2, b=x0,out=l8);
+
+	And(a=nots2, b=x1,out=h1);
+	And(a=nots2, b=x1,out=h2);
+	And(a=nots2, b=x1,out=h3);
+	And(a=nots2, b=x1,out=h4);
+	And(a=s2, b=x1,out=h5);
+	And(a=s2, b=x1,out=h6);
+	And(a=s2, b=x1,out=h7);
+	And(a=s2, b=x1,out=h8);
+
+	And(a=m1,b=l1,out=y00);
+	And(a=m2,b=l2,out=y10);
+	And(a=m3,b=l3,out=y20);
+	And(a=m4,b=l4,out=y30);
+	And(a=m5,b=l5,out=y40);
+	And(a=m6,b=l6,out=y50);
+	And(a=m7,b=l7,out=y60);
+	And(a=m8,b=l8,out=y70);	
+
+	And(a=m1,b=h1,out=y01);
+	And(a=m2,b=h2,out=y11);
+	And(a=m3,b=h3,out=y21);
+	And(a=m4,b=h4,out=y31);
+	And(a=m5,b=h5,out=y41);
+	And(a=m6,b=h6,out=y51);
+	And(a=m7,b=h7,out=y61);
+	And(a=m8,b=h8,out=y71);	
+}

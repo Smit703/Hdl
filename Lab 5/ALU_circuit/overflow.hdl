@@ -1,0 +1,33 @@
+CHIP overflow
+{
+    IN us,OFSAS,OFUAS,OFUM,OFSM,s2,s1,s0;
+    OUT y;
+
+    PARTS:
+    Not(in=s1, out=nots1);
+    Not(in=s0, out=nots0);
+
+    And(a=nots1, b=nots0, out=f1);
+    And(a=nots1, b=s0, out=f2);
+    And(a=s1, b=nots0, out=f3);
+    And(a=s1, b=s0, out=f4);
+
+    Not(in=us, out=nus);     
+
+    And(a=OFUAS,b=nus,out=x0);
+    And(a=OFSAS,b=us,out=x1);
+ 
+    Or(a=x0, b= x1, out = x2);
+
+    And(a=f1, b=x2, out=t10);
+    And(a=f2, b=x2, out=t20);
+    And(a=f3, b=OFUM, out=t30);
+    And(a=f4, b=OFSM, out=t40);
+
+    Or(a=t10, b=t20, out=a10);
+    Or(a=t30, b=t40, out=a20);
+    Or(a=a10, b=a20, out=yp);
+
+    And(a=s2, b=yp, out=y);	
+
+}
